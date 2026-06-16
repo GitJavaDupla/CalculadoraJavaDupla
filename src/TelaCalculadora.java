@@ -33,6 +33,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         BtnSomar = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
         txtResultado = new javax.swing.JTextField();
+        BtnSubtrair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +56,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
         lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblResultado.setText("Resultado");
 
+        BtnSubtrair.setText("-");
+        BtnSubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSubtrairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,11 +80,17 @@ public class TelaCalculadora extends javax.swing.JFrame {
                             .addGap(135, 135, 135)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtResultado)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtValor1)
-                                    .addComponent(txtValor2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtValor1)
+                                        .addComponent(txtValor2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(BtnSubtrair, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(177, 177, 177)
                             .addComponent(lblResultado))))
@@ -96,7 +110,9 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnSubtrair, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(lblResultado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -115,6 +131,15 @@ public class TelaCalculadora extends javax.swing.JFrame {
         
         txtResultado.setText(Integer.toString(resultado));
     }//GEN-LAST:event_BtnSomarActionPerformed
+
+    private void BtnSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSubtrairActionPerformed
+        int valor1 = Integer.valueOf(txtValor1.getText());
+        int valor2 = Integer.valueOf(txtValor2.getText());
+        
+        int resultado = valor1-valor2;
+        
+        txtResultado.setText(Integer.toString(resultado));
+    }//GEN-LAST:event_BtnSubtrairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +178,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSomar;
+    private javax.swing.JButton BtnSubtrair;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblValor1;
