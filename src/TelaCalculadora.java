@@ -25,21 +25,96 @@ public class TelaCalculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitulo = new javax.swing.JLabel();
+        lblValor1 = new javax.swing.JLabel();
+        txtValor1 = new javax.swing.JTextField();
+        lblValor2 = new javax.swing.JLabel();
+        txtValor2 = new javax.swing.JTextField();
+        BtnSomar = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
+        txtResultado = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitulo.setText("Calculadora Java");
+
+        lblValor1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblValor1.setText("Num 1:");
+
+        lblValor2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblValor2.setText("Num 2:");
+
+        BtnSomar.setText("+");
+        BtnSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSomarActionPerformed(evt);
+            }
+        });
+
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblResultado.setText("Resultado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(lblValor1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(lblValor2))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(135, 135, 135)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtResultado)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtValor1)
+                                    .addComponent(txtValor2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(177, 177, 177)
+                            .addComponent(lblResultado))))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitulo)
+                .addGap(41, 41, 41)
+                .addComponent(lblValor1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblValor2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnSomar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(lblResultado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSomarActionPerformed
+        int valor1 = Integer.valueOf(txtValor1.getText());
+        int valor2 = Integer.valueOf(txtValor2.getText());
+        
+        int resultado = valor1+valor2;
+        
+        txtResultado.setText(Integer.toString(resultado));
+    }//GEN-LAST:event_BtnSomarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +152,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnSomar;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblValor1;
+    private javax.swing.JLabel lblValor2;
+    private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextField txtValor1;
+    private javax.swing.JTextField txtValor2;
     // End of variables declaration//GEN-END:variables
 }
