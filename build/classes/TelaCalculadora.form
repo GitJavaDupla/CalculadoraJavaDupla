@@ -46,7 +46,11 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="BtnDividir" min="-2" pref="56" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="BtnMultiplicacao" min="-2" pref="56" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="BtnDividir" min="-2" pref="56" max="-2" attributes="0"/>
+                                              </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="BtnSomar" min="-2" pref="56" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -88,7 +92,10 @@
                   <Component id="BtnSubtrair" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="BtnDividir" min="-2" pref="54" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtnDividir" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="BtnMultiplicacao" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -159,6 +166,15 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnDividirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnMultiplicacao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMultiplicacaoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
